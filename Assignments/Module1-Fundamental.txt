@@ -2,3 +2,5 @@
 What is SDLC ?
 
 -SDLC is software development lifecycle.
+
+- Phases
