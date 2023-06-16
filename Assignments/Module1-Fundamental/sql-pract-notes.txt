@@ -1,0 +1,152 @@
+=====================================================================
+	SQL Commands :
+=====================================================================
+	There are 4 Commands
+
+	1) DDL (Data Definition Language)
+		
+		- Create,alter,truncate,drop	
+
+	2) DML (Data Manipulation Language)
+
+		- Insert, Update, Delete
+
+	3) DQL (Data Query Language)
+
+		- Select
+
+	4) DCL/TCL : Data/Transaction Control Language.
+
+		- Savepoint,commit, rollback
+
+=====================================================================
+
+ 1) Create : To create database/table
+
+	i) Database:
+
+		syntax: create database database-name;
+
+		e.g : CREATE DATABASE testing7to8;
+
+		to use Database write query as.
+
+		e.g use testing7to8;
+=====================================================================
+	A) Constraints : Restricting the Columns.
+
+	 a) primary key : unique + not null
+	 b) foriegn key : it depends on the primary table
+	 c) unique key  : only unique value
+	 d) check       : condition you should apply.
+	 e) not null	: no blank values.
+	 f) auto_increment : it will increase the value by 1.
+	
+	ii) Table :
+
+		syntax: 
+
+			create table table-name
+			(
+				col-name1 data-type constraint,
+				col-name2 data-type constraint,
+				col-name3 data-type constraint,
+				..........
+				col-name4 data-type constraint
+			);
+	
+			e.g
+
+			CREATE TABLE employee
+			(
+				e_id INT PRIMARY KEY,
+				e_name VARCHAR(20) NOT NULL,
+				e_mobile BIGINT NOT NULL
+			);
+
+	
+
+
+
+
+=====================================================================
+
+2) Select : To fetch the data from  Table.
+===========================================
+
+	i) Fetching the individual columns.
+
+	syntax: select col-name,col-name,col-name from table-name;
+
+	e.g : SELECT s_id,s_name,s_email,s_mobile FROM student;
+
+	
+	ii) Fetching all the columns together
+
+	syntax : select * from table-name;
+
+	* -> All Columns
+
+	e.g : SELECT * FROM student;
+
+=======================================================================================
+
+3) Insert : TO insert the record/row inside the table, we use the insert query.
+===========================================
+	
+    syntax : insert into table-name (col-name,col-name,col-name...) values (val,'val','val');
+
+    example:
+
+   	INSERT INTO student (s_id,s_name,s_email,s_mobile) 
+	VALUES (1,'rushabh','rush2gmail.com',9879745789);
+
+	INSERT INTO student (s_id,s_name,s_email,s_mobile) 
+	VALUES (2,'dhara','dhara@gmail.com',8879745789);
+
+ With Auto_increment:
+
+	INSERT INTO student (s_name,s_email,s_mobile) 
+	VALUES ('rushabh','rush2gmail.com',9879745789);
+
+	INSERT INTO student (s_name,s_email,s_mobile) 
+	VALUES ('dhara','dhara@gmail.com',8879745789);
+
+	INSERT INTO student (s_name,s_email,s_mobile) 
+	VALUES ('hardik','hardik@gmail.com',7879745789); 
+
+=======================================================================================
+
+3) truncate : to empty the data from the table.
+===========================================	
+
+	syntax : truncate table table-name;
+
+	e.g : TRUNCATE TABLE student;
+
+=======================================================================================
+
+4) drop : to remove the table/database.
+===========================================	
+
+	syntax: drop database database-name;
+		drop table table-name;
+
+=======================================================================================
+
+4) update : to update/modify the existing record in the table.
+===========================================	
+
+	syntax : update table-name set col-name=value where col-name=value;
+
+	e.g 
+		UPDATE student SET s_email='rushabh@gmail.com' WHERE s_id=1;
+
+		UPDATE student SET s_mobile=8365487487,s_address='Canada' WHERE s_id=1;
+		
+=======================================================================================
+
+5) delete : to delete/remove the record/row from the table.
+===========================================
+
+	syntax : delete from table-name where col-name=value;
